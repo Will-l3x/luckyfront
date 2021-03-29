@@ -1,8 +1,8 @@
 import React from 'react';
 import '../App.css';
 
-
-function navbar() {
+ 
+function Navbars() {
     return (
         <div>
             <nav className="navbar navbar-expand-lg nav-back fixed-top" id="mainNav">
@@ -26,4 +26,4 @@ function navbar() {
     )
 }
 
-export default navbar
+export default Navbars
