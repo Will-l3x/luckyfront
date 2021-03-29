@@ -12,11 +12,12 @@ function Navbars() {
                     </button>
                     <div className="collapse navbar-collapse" id="navbarResponsive">
                     <ul className="navbar-nav ml-auto">
-                        <li className="nav-item"><a className="nav-link" href="#about">Services</a></li>
-                        <li className="nav-item"><a className="nav-link" href="#about">About</a></li>
-                        <li className="nav-item"><a className="nav-link" href="#about">Medical Camps</a></li>
-                        <li className="nav-item"><a className="nav-link" href="#projects">Team</a></li>
-                        <li className="nav-item"><a className="nav-link" href="#signup">Contact</a></li>
+                        <li className="nav-item"><a className="nav-link" href="#about">Help Desk</a></li>
+                        <li className="nav-item"><a className="nav-link" href="#about">Admissions Desk</a></li>
+                        <li className="nav-item"><a className="nav-link" href="#about">Assessment Portal</a></li>
+                        <li className="nav-item"><a className="nav-link" href="#projects">Doctors Portal</a></li>
+                        <li className="nav-item"><a className="nav-link" href="#signup">Lab Portak</a></li>
+                        <li className="nav-item"><a className="nav-link" href="#signup">Dispensary</a></li>
                     </ul>
                     </div>
                 </div>
