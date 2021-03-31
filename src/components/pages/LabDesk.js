@@ -18,44 +18,44 @@ function LabDesk() {
             <div className="row no-margin">
               <div className="col-sm-7">
                 <div className="content">
-                  <h1>Book You Slot Now and Save your time</h1>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sagittis at lacus at rhoncus. Integer pharetra lacus vitae sapien blandit eleifend. </p>
-                  <h2>For Help Call : +189-123-453</h2>
+                  <h1>Lab Results</h1>
+                  <p> process patient lab results. </p>
+                  <h2>For Help email : admin@blockmed.co.zw</h2>
                 </div>
               </div>
               <div className="col-sm-5">
                 <div className="form-data">
                   <div className="form-head">
-                    <h2>Book Appointemnt</h2>
+                    <h2>Process Results</h2>
                   </div>
                   <div className="form-body">
                     <div className="row form-row">
                       <input type="text" placeholder="Enter Full name" className="form-control" />
                     </div>
                     <div className="row form-row">
-                      <input type="text" placeholder="Enter Mobile Number" className="form-control" />
+                      <input type="text" placeholder="Blood test" className="form-control" />
                     </div>
                     <div className="row form-row">
-                      <input type="text" placeholder="Enter Email Adreess" className="form-control" />
+                      <input type="text" placeholder="X-ray" className="form-control" />
                     </div>
                     <div className="row form-row">
-                      <input id="dat" type="text" placeholder="Appointment Date" className="form-control" />
+                      <input id="dat" type="text" placeholder="Ultrasound" className="form-control" />
                     </div>
-                    <h6>Address Details</h6>
+                    <h6>Other Details</h6>
                     <div className="row form-row">
                       <div className="col-sm-6">
-                        <input type="text" placeholder="Enter Area" className="form-control" />
+                        <input type="text" placeholder="Cultures" className="form-control" />
                       </div>
                       <div className="col-sm-6">
-                        <input type="text" placeholder="Enter City" className="form-control" />
+                        <input type="text" placeholder="lipid panel" className="form-control" />
                       </div>
                     </div>
                     <div className="row form-row">
                       <div className="col-sm-6">
-                        <input type="text" placeholder="Enter State" className="form-control" />
+                        <input type="text" placeholder="hemoglobin" className="form-control" />
                       </div>
                       <div className="col-sm-6">
-                        <input type="text" placeholder="Postal Code" className="form-control" />
+                        <input type="text" placeholder="urine analysis" className="form-control" />
                       </div>
                     </div>
                     <div className="row form-row">

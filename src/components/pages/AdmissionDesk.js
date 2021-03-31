@@ -18,49 +18,57 @@ function AdmissionDesk() {
             <div className="row no-margin">
               <div className="col-sm-7">
                 <div className="content">
-                  <h1>Book You Slot Now and Save your time</h1>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sagittis at lacus at rhoncus. Integer pharetra lacus vitae sapien blandit eleifend. </p>
-                  <h2>For Help Call : +189-123-453</h2>
+                  <h1>Admissions Desk</h1>
+                  <p>Collect Patient details, insurance, address etc, </p>
+                  <h2>For Help email: admin@blockmed.co.zw</h2>
                 </div>
               </div>
               <div className="col-sm-5">
                 <div className="form-data">
                   <div className="form-head">
-                    <h2>Book Appointemnt</h2>
+                    <h2>Book patients</h2>
                   </div>
                   <div className="form-body">
                     <div className="row form-row">
                       <input type="text" placeholder="Enter Full name" className="form-control" />
                     </div>
                     <div className="row form-row">
-                      <input type="text" placeholder="Enter Mobile Number" className="form-control" />
+                      <input type="text" placeholder="Next of Kin" className="form-control" />
                     </div>
                     <div className="row form-row">
-                      <input type="text" placeholder="Enter Email Adreess" className="form-control" />
+                      <input type="text" placeholder="Gender" className="form-control" />
                     </div>
                     <div className="row form-row">
-                      <input id="dat" type="text" placeholder="Appointment Date" className="form-control" />
+                      <input id="dat" type="text" placeholder="Age" className="form-control" />
                     </div>
-                    <h6>Address Details</h6>
+                    <h6>Insurance Information</h6>
                     <div className="row form-row">
                       <div className="col-sm-6">
-                        <input type="text" placeholder="Enter Area" className="form-control" />
+                        <input type="text" placeholder="Date Of Birth" className="form-control" />
                       </div>
                       <div className="col-sm-6">
-                        <input type="text" placeholder="Enter City" className="form-control" />
+                        <input type="text" placeholder="National ID Number" className="form-control" />
                       </div>
                     </div>
                     <div className="row form-row">
                       <div className="col-sm-6">
-                        <input type="text" placeholder="Enter State" className="form-control" />
+                        <input type="text" placeholder="Marital Status" className="form-control" />
                       </div>
                       <div className="col-sm-6">
-                        <input type="text" placeholder="Postal Code" className="form-control" />
+                        <input type="text" placeholder="Medical Aid Affiliation" className="form-control" />
+                      </div>
+                    </div>
+                    <div className="row form-row">
+                      <div className="col-sm-6">
+                        <input type="text" placeholder="Medical Aid Number" className="form-control" />
+                      </div>
+                      <div className="col-sm-6">
+                        <input type="text" placeholder="Consultation Fee" className="form-control" />
                       </div>
                     </div>
                     <div className="row form-row">
                       <button className="btn btn-success btn-appointment">
-                        Book Appointment
+                        Process Patient
                       </button>
                     </div>
                   </div>

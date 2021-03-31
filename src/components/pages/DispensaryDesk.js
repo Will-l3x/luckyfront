@@ -18,9 +18,9 @@ function DispensaryDesk() {
             <div className="row no-margin">
               <div className="col-sm-7">
                 <div className="content">
-                  <h1>Book You Slot Now and Save your time</h1>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sagittis at lacus at rhoncus. Integer pharetra lacus vitae sapien blandit eleifend. </p>
-                  <h2>For Help Call : +189-123-453</h2>
+                  <h1>Patient Medicine & Prescription</h1>
+                  <p>doctors pescription appear here. </p>
+                  <h2>For help email : admin@medblock.co.zw </h2>
                 </div>
               </div>
               <div className="col-sm-5">
@@ -33,34 +33,15 @@ function DispensaryDesk() {
                       <input type="text" placeholder="Enter Full name" className="form-control" />
                     </div>
                     <div className="row form-row">
-                      <input type="text" placeholder="Enter Mobile Number" className="form-control" />
+                      <input type="text" placeholder="Prescription" className="form-control" />
                     </div>
-                    <div className="row form-row">
-                      <input type="text" placeholder="Enter Email Adreess" className="form-control" />
-                    </div>
-                    <div className="row form-row">
-                      <input id="dat" type="text" placeholder="Appointment Date" className="form-control" />
-                    </div>
-                    <h6>Address Details</h6>
-                    <div className="row form-row">
-                      <div className="col-sm-6">
-                        <input type="text" placeholder="Enter Area" className="form-control" />
-                      </div>
-                      <div className="col-sm-6">
-                        <input type="text" placeholder="Enter City" className="form-control" />
-                      </div>
-                    </div>
-                    <div className="row form-row">
-                      <div className="col-sm-6">
-                        <input type="text" placeholder="Enter State" className="form-control" />
-                      </div>
-                      <div className="col-sm-6">
-                        <input type="text" placeholder="Postal Code" className="form-control" />
-                      </div>
-                    </div>
+                    
+                    
+                    
+                    
                     <div className="row form-row">
                       <button className="btn btn-success btn-appointment">
-                        Book Appointment
+                        Clear Pescription
                       </button>
                     </div>
                   </div>
