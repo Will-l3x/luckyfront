@@ -1,7 +1,52 @@
 import React from 'react';
 import './Style.css';
 
-function Register() {
+class Register extends React.Component{
+  constructor(props){
+    super(props);
+    this.state = {
+      Name: '',
+      Address: '',
+    }
+    this.handleChangeName = this.handleChangeName.bind(this);
+    this.handleChangeAddress = this.handleChangeAddress.bind(this);
+    this.RegisterNoder = this.RegisterNoder.bind(this);
+  }
+  handleChangeName(event) {
+    this.setState({Name: event.target.value});
+  }
+  handleChangeAddress(event) {
+    this.setState({Address: event.target.value});
+  }
+
+  async RegisterNoder(){
+    var axios = require('axios');
+    var data = JSON.stringify({"nodes":[this.state.Address]});
+
+    var config = {
+      method: 'post',
+      url: 'http://localhost:8000/nodes/register',
+      headers: { 
+        'Content-Type': 'application/json'
+      },
+      data : data
+    };
+
+    axios(config)
+    .then(function (response) {
+      console.log(JSON.stringify(response.data));
+      alert(JSON.stringify(response.data.message))
+      this.setState({
+        Name: '',
+        Address: "",
+      })
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+  }
+
+  render(){
     return (
         <>
         {/* Required meta tags */}
@@ -27,11 +72,11 @@ function Register() {
                   </div>
                   <div className="form-body">
                     
-                      <input type="text" placeholder="Enter Network Adreess" className="form-control" />
+                      <input type="text" placeholder="Enter Network Adreess" className="form-control"  onChange={this.handleChangeAddress}/>
                     </div>
                     <div className="form-body">
                     
-                      <input type="text" placeholder="Enter The Name of The Node" className="form-control" />
+                      <input type="text" placeholder="Enter The Name of The Node" className="form-control" onChange={this.handleChangeName} />
                     </div>
                     
                     
@@ -39,7 +84,7 @@ function Register() {
                     
                     
                     <div className="row form-row">
-                      <button className="btn btn-success btn-appointment">
+                      <button className="btn btn-success btn-appointment" onClick={this.RegisterNoder}>
                         Proceed
                       </button>
                     </div>
@@ -59,6 +104,7 @@ function Register() {
       </>
             
     )
+        }
 }
 
 export default Register

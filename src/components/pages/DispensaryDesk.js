@@ -4,7 +4,115 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './style.css';
 
 
-function DispensaryDesk() {
+class DispensaryDesk extends React.Component{
+  constructor(props){
+    super(props)
+    this.state = {
+      HostName: '',
+      NewNode: 'http://127.0.0.1:8000',
+      TransactionId: 0,
+      Pname: '',
+      Wname: '',
+      DrugType: '',
+      DrugName: '',
+      Quantity: '',
+      dataSource: [{}],
+      url: 'http://localhost:8000/',
+      Details: ''
+      
+    }
+    
+    this.handleChangeDrugName = this.handleChangeDrugName.bind(this);
+    this.handleChangeDetails = this.handleChangeDetails.bind(this);
+    
+    
+    this.Postdata = this.Postdata.bind(this);
+    this.MineData = this.MineData.bind(this);
+    this.RegisterNode = this.RegisterNode.bind(this);
+}
+
+
+ async Postdata (){
+  var axios = require('axios');
+  
+
+  var data = JSON.stringify({"PatientID":this.state.Details,"Medication":this.state.DrugName});
+  
+  var config = {
+    method: 'post',
+    url: this.state.NewNode+'/transactions/newDisp',
+    headers: { 
+      'Content-Type': 'application/json'
+    },
+    data : data
+  };
+  
+  axios(config)
+  .then(function (response) {
+    console.log(JSON.stringify(response.data));
+    alert(JSON.stringify(response.data.message));
+    
+  })
+  .catch(function (error) {
+    console.log(error);
+  });
+  
+}
+async MineData(){
+  var axios = require('axios');
+
+  var config = {
+    method: 'get',
+    url: this.state.NewNode+'/mine',
+    headers: { }
+  };
+  
+  axios(config)
+  .then(function (response) {
+    console.log(JSON.stringify(response.data));
+    alert(JSON.stringify(response.data.message))
+    this.setState({
+      dataSource: JSON.stringify(response.data.transactions)
+    })
+  })
+  .catch(function (error) {
+    console.log(error);
+  });
+  
+
+}
+async RegisterNode (){
+  var axios = require('axios');
+  var data = JSON.stringify({"nodes":[this.state.NewNode]});
+
+  var config = {
+    method: 'post',
+    url: 'http://localhost:8000/nodes/register',
+    headers: { 
+      'Content-Type': 'application/json'
+    },
+    data : data
+  };
+
+    axios(config)
+    .then(function (response) {
+      console.log(JSON.stringify(response.data));
+      alert(JSON.stringify(response.data));
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+
+}
+
+handleChangeDrugName(event) {
+  this.setState({DrugName: event.target.value});
+}
+handleChangeDetails(event) {
+  this.setState({Details: event.target.value});
+}
+
+  render(){
     return (
         <>
         {/* Required meta tags */}
@@ -26,23 +134,24 @@ function DispensaryDesk() {
               <div className="col-sm-5">
                 <div className="form-data">
                   <div className="form-head">
-                    <h2>Book Appointemnt</h2>
+                    <h2>Pharmacy Tab</h2>
                   </div>
                   <div className="form-body">
                     <div className="row form-row">
-                      <input type="text" placeholder="Enter Full name" className="form-control" />
+                      <input type="text" placeholder="Enter Patient ID" className="form-control" onChange={this.handleChangeDetails} />
                     </div>
                     <div className="row form-row">
-                      <input type="text" placeholder="Prescription" className="form-control" />
+                      <input type="text" placeholder="Prescription" className="form-control" onChange={this.handleChangeDrugName} />
                     </div>
                     
                     
                     
                     
                     <div className="row form-row">
-                      <button className="btn btn-success btn-appointment">
+                      <button className="btn btn-success btn-appointment" onClick={this.Postdata}>
                         Clear Pescription
                       </button>
+                      
                     </div>
                   </div>
                 </div>
@@ -54,6 +163,7 @@ function DispensaryDesk() {
         {/* jQuery first, then Popper.js, then Bootstrap JS */}
       </>
     )
+        }
 }
 
 export default DispensaryDesk
