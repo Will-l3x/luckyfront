@@ -1,7 +1,16 @@
 import React from 'react';
 import './Style.css';
 
-function Login() {
+class Login extends React.Component {
+  constructor(props){
+    super(props);
+    this.state = {
+
+    }
+
+    
+  }
+  render(){
     return (
         <>
         {/* Required meta tags */}
@@ -62,6 +71,7 @@ function Login() {
 
         
     )
+        }
 }
 
 export default Login

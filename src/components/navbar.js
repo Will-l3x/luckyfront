@@ -15,7 +15,7 @@ function Navbars() {
                     <Link></Link>
                     <div className="collapse navbar-collapse" id="navbarResponsive">
                     <ul className="navbar-nav ml-auto">
-                        <li className="nav-item"><a className="nav-link" href="#about">Help Desk</a></li>
+                        <li className="nav-item"><a className="nav-link" href="#">Help Desk</a></li>
                         <li className="nav-item"><a className="nav-link" href="#about">Admissions Desk</a></li>
                         <li className="nav-item"><a className="nav-link" href="#about">Assessment Portal</a></li>
                         <li className="nav-item"><a className="nav-link" href="#projects">Doctors Portal</a></li>
