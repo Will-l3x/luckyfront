@@ -5,10 +5,38 @@ class Login extends React.Component {
   constructor(props){
     super(props);
     this.state = {
+        user: '',
+        pass: '',
 
     }
 
     
+  }
+  handleChangeusername(event) {
+    this.setState({user: event.target.value});
+  }
+  handleChangePassword(event) {
+    this.setState({pass: event.target.value});
+  }
+
+  async Login(){
+    if(this.state.user === "helpdesk@medlab.com" && this.state.pass === "help123"){
+
+    }else if(this.state.user === "admin@medlab.com" && this.state.pass === "admin123"){
+
+    }else if(this.state.user === "admissiondesk@medlab.com" && this.state.pass === "admission123"){
+
+    }else if(this.state.user === "assessmentdesk@medlab.com" && this.state.pass === "assess123"){
+
+    }else if(this.state.user === "doctor@medlab.com" && this.state.pass === "doctor123"){
+
+    }else if(this.state.user === "labdesk@medlab.com" && this.state.pass === "lab123"){
+      
+    }else if(this.state.user === "dispensary@medlab.com" && this.state.pass === "disp123"){
+
+    }else{
+      alert("incorrect username or password");
+    }
   }
   render(){
     return (
@@ -36,11 +64,11 @@ class Login extends React.Component {
                   </div>
                   <div className="form-body">
                     
-                      <input type="text" placeholder="Enter Email Adreess" className="form-control" />
+                      <input type="text" placeholder="Enter Email Adreess" className="form-control" onChange={this.handleChangeusername} />
                     </div>
                     <div className="form-body">
                     
-                      <input type="text" placeholder="Enter Your Password" className="form-control" />
+                      <input type="text" placeholder="Enter Your Password" className="form-control" onChange={this.handleChangePassword}/>
                     </div>
                     
                     
