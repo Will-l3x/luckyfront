@@ -2,6 +2,7 @@ import React from 'react';
 import './Style.css';
 import {Link} from 'react-router-dom';
 import {Redirect} from 'react-router';
+import { findRenderedDOMComponentWithClass } from 'react-dom/test-utils';
 class Login extends React.Component {
   constructor(props){
     super(props);
@@ -10,7 +11,9 @@ class Login extends React.Component {
         pass: '',
         log: 0,
     }
-
+    this.handleChangeusername = this.handleChangeusername.bind(this);
+    this.handleChangePassword = this.handleChangePassword.bind(this);
+    this.Login = this.Login.bind(this);
     
   }
   handleChangeusername(event) {
@@ -120,7 +123,7 @@ class Login extends React.Component {
                     
                     
                     <div className="row form-row">
-                      <button className="btn btn-success btn-appointment">
+                      <button className="btn btn-success btn-appointment" onClick={this.Login}>
                         Proceed
                       </button>
                     </div>

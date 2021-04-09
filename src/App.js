@@ -10,6 +10,7 @@ import DoctorsDesk from './components/pages/DoctorsDesk';
 import LabDesk from './components/pages/LabDesk';
 import DispensaryDesk from './components/pages/DispensaryDesk';
 import Admin from './components/pages/Admin';
+import Login from './components/Auth/Login';
 
 function App() {
   return(
@@ -18,7 +19,7 @@ function App() {
       <Navbars/>
       
       <Switch>
-          <Route path='/' exact component={Home}/>
+          <Route path='/' exact component={Login}/>
           <Route exact path='/helpdesk' component={HelpDesk}/>
           <Route exact path='/admindesk' component={AdmissionDesk}/>
           <Route exact path='/assessmentdesk' component={AssessmentDesk} />
