@@ -9,6 +9,7 @@ import AssessmentDesk from './components/pages/AssessmentDesk';
 import DoctorsDesk from './components/pages/DoctorsDesk';
 import LabDesk from './components/pages/LabDesk';
 import DispensaryDesk from './components/pages/DispensaryDesk';
+import Admin from './components/pages/Admin';
 
 function App() {
   return(
@@ -24,6 +25,7 @@ function App() {
           <Route exact path ='/doctorsdesk' component={DoctorsDesk}/>
           <Route exact path = '/labdesk' component={LabDesk}/>
           <Route exact path = '/dispensary' component={DispensaryDesk} />
+          <Route exact path = '/admin' component={Admin} />
       </Switch>
     </Router>
   </>

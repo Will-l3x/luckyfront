@@ -1,6 +1,7 @@
 import React from 'react';
 import './Style.css';
-
+import {Link} from 'react-router-dom';
+import {Redirect} from 'react-router';
 class Login extends React.Component {
   constructor(props){
     super(props);
@@ -67,6 +68,21 @@ class Login extends React.Component {
     }
   }
   render(){
+    if (this.state.log === 1){
+      return <Redirect to="/helpdesk" />
+    }else if(this.state.log === 2){
+      return <Redirect to =  "/admin" />
+    }else if(this.state.log === 3){
+      return <Redirect to = "/admindesk" />
+    }else if(this.state.log === 4){
+      return <Redirect to = "/assessmentdesk" />
+    }else if(this.state.log === 5){
+      return <Redirect to = "/doctorsdesk" />
+    }else if(this.state.log === 6){
+      return <Redirect to  ="/labdesk" />
+    }else if(this.state.log === 7){
+      return <Redirect to = "/dispensary" />
+    }
     return (
         <>
         {/* Required meta tags */}
