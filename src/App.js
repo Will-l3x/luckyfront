@@ -18,12 +18,12 @@ function App() {
       
       <Switch>
           <Route path='/' exact component={Home}/>
-          <Route path='/helpdesk' component={HelpDesk}/>
-          <Route path='/admindesk' component={AdmissionDesk}/>
-          <Route path='/assessmentdesk' component={AssessmentDesk} />
-          <Route path ='/doctorsdesk' component={DoctorsDesk}/>
-          <Route path = '/labdesk' component={LabDesk}/>
-          <Route path = 'dispensary' component={DispensaryDesk} />
+          <Route exact path='/helpdesk' component={HelpDesk}/>
+          <Route exact path='/admindesk' component={AdmissionDesk}/>
+          <Route exact path='/assessmentdesk' component={AssessmentDesk} />
+          <Route exact path ='/doctorsdesk' component={DoctorsDesk}/>
+          <Route exact path = '/labdesk' component={LabDesk}/>
+          <Route exact path = 'dispensary' component={DispensaryDesk} />
       </Switch>
     </Router>
   </>

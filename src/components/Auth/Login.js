@@ -7,7 +7,7 @@ class Login extends React.Component {
     this.state = {
         user: '',
         pass: '',
-
+        log: 0,
     }
 
     
@@ -21,18 +21,46 @@ class Login extends React.Component {
 
   async Login(){
     if(this.state.user === "helpdesk@medlab.com" && this.state.pass === "help123"){
+      alert('Help Desk LogIn Successful');
+      this.setState({
+        log: 1,
+      })
 
     }else if(this.state.user === "admin@medlab.com" && this.state.pass === "admin123"){
+      alert('Admnistrator Desk LogIn Successful');
+      this.setState({
+        log: 2,
+      })
 
     }else if(this.state.user === "admissiondesk@medlab.com" && this.state.pass === "admission123"){
+      alert('Admission Desk LogIn Successful');
+      this.setState({
+        log: 3,
+      })
 
     }else if(this.state.user === "assessmentdesk@medlab.com" && this.state.pass === "assess123"){
+      alert('Assessment Desk LogIn Successful');
+      this.setState({
+        log: 4,
+      })
 
     }else if(this.state.user === "doctor@medlab.com" && this.state.pass === "doctor123"){
+      alert('Doctor Desk LogIn Successful');
+      this.setState({
+        log: 5,
+      })
 
     }else if(this.state.user === "labdesk@medlab.com" && this.state.pass === "lab123"){
+      alert('Lab Desk LogIn Successful');
+      this.setState({
+        log: 6,
+      })
       
     }else if(this.state.user === "dispensary@medlab.com" && this.state.pass === "disp123"){
+      alert('Dispensary Desk LogIn Successful');
+      this.setState({
+        log: 7,
+      })
 
     }else{
       alert("incorrect username or password");
