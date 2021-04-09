@@ -23,7 +23,7 @@ function App() {
           <Route exact path='/assessmentdesk' component={AssessmentDesk} />
           <Route exact path ='/doctorsdesk' component={DoctorsDesk}/>
           <Route exact path = '/labdesk' component={LabDesk}/>
-          <Route exact path = 'dispensary' component={DispensaryDesk} />
+          <Route exact path = '/dispensary' component={DispensaryDesk} />
       </Switch>
     </Router>
   </>
