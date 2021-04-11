@@ -272,7 +272,7 @@ renderTablesData(){
                   </div>
                   <div className="form-body">
                     <div className="row form-row">
-                      <input type="text" placeholder="Enter Patient ID" className="form-control" onChange={this.handleChangeDetails} />
+                      <input type="text" placeholder="Enter Patient Name" className="form-control" onChange={this.handleChangeDetails} />
                     </div>
                     <div className="row form-row">
                       <input type="text" placeholder="Prescription" className="form-control" onChange={this.handleChangeDrugName} />
@@ -289,18 +289,7 @@ renderTablesData(){
                       </button>
                       
                     </div>
-                    <h1>Prescriptions Table</h1>
-                    <table>
-                      <thead>
-                        <tr>
-                          <th>Patient ID</th>
-                          <th>Prescription</th>
-                          <th>Recommendation</th>
-                        </tr>
-                        </thead>
-                      
-
-                    </table>
+                    
                       
                     
                       
