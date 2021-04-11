@@ -19,7 +19,7 @@ function Navbars() {
                         <li className="nav-item"><a className="nav-link" href="/">Admissions Desk</a></li>
                         <li className="nav-item"><a className="nav-link" href="/">Assessment Portal</a></li>
                         <li className="nav-item"><a className="nav-link" href="/">Doctors Portal</a></li>
-                        <li className="nav-item"><a className="nav-link" href="/">Lab Portak</a></li>
+                        <li className="nav-item"><a className="nav-link" href="/">Lab Portal</a></li>
                         <li className="nav-item"><a className="nav-link" href="/">Dispensary</a></li>
                     </ul>
                     </div>

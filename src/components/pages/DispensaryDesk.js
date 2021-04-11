@@ -56,7 +56,7 @@ class DispensaryDesk extends React.Component{
   .catch(function (error) {
     console.log(error);
   });
-  
+  this.MineData();
 }
 async MineData(){
   var axios = require('axios');

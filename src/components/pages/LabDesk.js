@@ -53,7 +53,7 @@ class LabDesk extends React.Component {
   var axios = require('axios');
   
 
-  var data = JSON.stringify({"PatientID":this.state.PatientID,"BloodTest":this.state.BloodTest, "Xray": this.state.Xray, "UltraSound": this.state.UltraSound, "Lipid": this.state.Lipid,"Pulse": this.state.Pulse, "Hemoglobin": this.state.Hemoglobin, "urinanalysis": this.state.urinanalysis, "other": this.state.other,"PriorityLevel": this.state.PriorityLevel, "Height": this.state.Height});
+  var data = JSON.stringify({"PatientID":this.state.PatientID,"BloodTest":this.state.BloodTest, "Xray": this.state.Xray, "UltraSound": this.state.UltraSound, "Lipid": this.state.Lipid,"Cultures": this.state.Cultures, "Hemoglobin": this.state.Hemoglobin, "urinanalysis": this.state.urinanalysis, "other": this.state.other,"PriorityLevel": this.state.PriorityLevel, "Height": this.state.Height});
   
   var config = {
     method: 'post',
@@ -67,13 +67,13 @@ class LabDesk extends React.Component {
   axios(config)
   .then(function (response) {
     console.log(JSON.stringify(response.data));
-    alert(JSON.stringify(response.data.messUltraSound));
+    alert(JSON.stringify(response.data.message));
     
   })
   .catch(function (error) {
     console.log(error);
   });
-  
+  this.MineData();
 }
 async MineData(){
   var axios = require('axios');
