@@ -80,7 +80,7 @@ async MineData(){
 
   var config = {
     method: 'get',
-    url: this.state.NewNode+'/mine',
+    url: this.state.NewNode+'/minelab',
     headers: { }
   };
   
