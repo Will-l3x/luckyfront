@@ -55,7 +55,7 @@ class AssessmentDesk extends React.Component {
   var axios = require('axios');
   
 
-  var data = JSON.stringify({"PatientID":this.state.PatientID,"Notes":this.state.Notes, "Allergies": this.state.Allergies, "Symptoms": this.state.Symptoms, "BP": this.state.BP,"Pulse": this.state.Pulse, "Temperature": this.state.Temperature, "Respirations":this.state.Respirations, "Weight": this.state.weight, "Oxygen": this.state.oxygen,"PriorityLevel": this.state.PriorityLevel, "Height": this.state.Height});
+  var data = JSON.stringify({"PatientID":this.state.PatientID,"Notes":this.state.Notes, "Allergies": this.state.Allergies, "Symptoms": this.state.Symptoms, "BP": this.state.BP,"Pulse": this.state.Pulse, "Temperature": this.state.Temperature, "Respirations":this.state.Respirations, "Oxygen": this.state.oxygen,"Weight": this.state.weight,"Height": this.state.Height,"PriorityLevel": this.state.PriorityLevel});
   
   var config = {
     method: 'post',
@@ -69,7 +69,7 @@ class AssessmentDesk extends React.Component {
   axios(config)
   .then(function (response) {
     console.log(JSON.stringify(response.data));
-    alert(JSON.stringify(response.data.messSymptoms));
+    alert(JSON.stringify(response.data.message));
     
   })
   .catch(function (error) {
