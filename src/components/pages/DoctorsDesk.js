@@ -172,7 +172,7 @@ getChain(){
         dataSource: result.chain,
        
       });
-      alert('pescription chain grab successful!')
+      
       console.log(this.state.dataSource)
     },
     // Note: it's important to handle errors here
