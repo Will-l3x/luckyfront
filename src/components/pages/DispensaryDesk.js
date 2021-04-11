@@ -29,8 +29,12 @@ class DispensaryDesk extends React.Component{
     this.Postdata = this.Postdata.bind(this);
     this.MineData = this.MineData.bind(this);
     this.RegisterNode = this.RegisterNode.bind(this);
+    this.getChain = this.getChain.bind(this);
 }
 
+componentDidMount(){
+  this.getChain();
+}
 
  async Postdata (){
   var axios = require('axios');
@@ -106,7 +110,7 @@ async RegisterNode (){
 }
 getChain(){
         
-  fetch(this.state.node+'/chain')
+  fetch(this.state.NewNode+'/deskchain')
   .then(res => res.json())
   .then(
     (result) => {
@@ -115,6 +119,7 @@ getChain(){
         dataSource: result.chain,
        
       });
+      alert('pescription chain grab successful!')
     },
     // Note: it's important to handle errors here
     // instead of a catch() block so that we don't swallow
@@ -158,6 +163,9 @@ handleChangeDetails(event) {
                   <p>doctors pescription appear here. </p>
                   <h2>For help email : admin@medblock.co.zw </h2>
                 </div>
+              </div>
+              <div>
+               
               </div>
               <div className="col-sm-5">
                 <div className="form-data">
