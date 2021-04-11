@@ -32,9 +32,12 @@ class HelpDesk extends React.Component {
     this.Postdata = this.Postdata.bind(this);
     this.MineData = this.MineData.bind(this);
     this.RegisterNode = this.RegisterNode.bind(this);
+    this.getChain = this.getChain.bind(this);
 }
 
-
+componentDidMount(){
+  this.getChain();
+}
  async Postdata (){
   var axios = require('axios');
   
@@ -126,6 +129,33 @@ handleChangeTemperature(event) {
 handleChangeDateofCertificate(event) {
   this.setState({DateOfCertificate: event.target.value});
 }
+getChain(){
+        
+  fetch(this.state.NewNode+'/deskchain')
+  .then(res => res.json())
+  .then(
+    (result) => {
+      this.setState({
+        isLoaded: true,
+        dataSource: result.chain,
+       
+      });
+      alert('pescription chain grab successful!')
+      console.log(this.state.dataSource)
+    },
+    // Note: it's important to handle errors here
+    // instead of a catch() block so that we don't swallow
+    // exceptions from actual bugs in components.
+    (error) => {
+      this.setState({
+        isLoaded: true,
+        error
+      });
+    }
+  )
+
+}
+
   render(){
     return (
         <>

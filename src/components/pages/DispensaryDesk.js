@@ -16,7 +16,7 @@ class DispensaryDesk extends React.Component{
       DrugType: '',
       DrugName: '',
       Quantity: '',
-      dataSource: [{}],
+      dataSource: [],
       url: 'http://localhost:8000/',
       Details: ''
       
@@ -30,6 +30,7 @@ class DispensaryDesk extends React.Component{
     this.MineData = this.MineData.bind(this);
     this.RegisterNode = this.RegisterNode.bind(this);
     this.getChain = this.getChain.bind(this);
+    this.getprescriptions = this.getprescriptions.bind(this);
 }
 
 componentDidMount(){
@@ -120,6 +121,7 @@ getChain(){
        
       });
       alert('pescription chain grab successful!')
+      console.log(this.state.dataSource)
     },
     // Note: it's important to handle errors here
     // instead of a catch() block so that we don't swallow
@@ -141,6 +143,23 @@ handleChangeDetails(event) {
   this.setState({Details: event.target.value});
 }
 
+getprescriptions(){
+  
+  const meds = this.state.dataSource.map((el)=>{
+    <li key={el.index.toString()}>
+      {el.transactions.map((tel)=>{
+        <li>
+          {tel.PatientID}
+          {tel.Prescription}
+        </li>
+      })}
+    </li>
+  })
+  return (
+    <ul>{meds}</ul>
+  )
+}
+
   render(){
     return (
         <>
@@ -156,8 +175,8 @@ handleChangeDetails(event) {
               <div className="col-sm-7">
                 
                 <div className="content">
-                <button className="btn btn-success btn-appointment" onClick={this.Postdata}>
-                        Register Node
+                <button className="btn btn-success btn-appointment" onClick={this.getprescriptions}>
+                        Get Pescription
                       </button>
                   <h1>Patient Medicine & Prescription</h1>
                   <p>doctors pescription appear here. </p>
@@ -167,30 +186,22 @@ handleChangeDetails(event) {
               <div>
                
               </div>
-              <div className="col-sm-5">
-                <div className="form-data">
-                  <div className="form-head">
-                    <h2>Pharmacy Tab</h2>
-                  </div>
-                  <div className="form-body">
-                    <div className="row form-row">
-                      <input type="text" placeholder="Enter Patient ID" className="form-control" onChange={this.handleChangeDetails} />
-                    </div>
-                    <div className="row form-row">
-                      <input type="text" placeholder="Prescription" className="form-control" onChange={this.handleChangeDrugName} />
-                    </div>
-                    
-                    
-                    
-                    
-                    <div className="row form-row">
-                      <button className="btn btn-success btn-appointment" onClick={this.Postdata}>
-                        Get Pescription Chain
-                      </button>
-                      
-                    </div>
-                  </div>
-                </div>
+              
+              <div>
+              {this.state.dataSource.map((el)=>{
+                        return <div>
+                            
+                             
+                            {el.transactions.map((tel)=>{
+                                return <div>
+                                    <h4>{tel.PatientID}</h4>
+                                    <h4>{tel.Prescription}</h4>
+                                    
+                                </div>
+                            })}
+                        </div>
+                    })
+                    }
               </div>
               <div className="col-sm-5">
                 <div className="form-data">
