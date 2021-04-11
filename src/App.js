@@ -15,6 +15,7 @@ import Table from './components/table';
 import TableGetChain from './components/table';
 import TableTransactions from './components/TableTransactions';
 import AdmissionTable from './components/pages/AdmissionDeskTable';
+import AssessmentTable from './components/pages/AssessmentDeskTable';
 
 
 function App() {
@@ -35,6 +36,7 @@ function App() {
           <Route exact path = '/tablechain' component={TableGetChain} />
           <Route exact path = '/table' component={TableTransactions} />
           <Route exact path = '/admissiontable' component={AdmissionTable} />
+          <Route exact path = '/assessmenttable' component={AssessmentTable} />
       </Switch>
     </Router>
   </>

@@ -58,7 +58,7 @@ class AssessmentTable extends Component {
 
    render() { //Whenever our class runs, render method will be called automatically, it may have already defined in the constructor behind the scene.
     if(this.state.log === 1){
-        return <Redirect to = "/admindesk" />
+        return <Redirect to = "/assessmentdesk" />
     }  
     return (
          <div>
