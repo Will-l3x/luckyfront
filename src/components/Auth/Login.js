@@ -39,7 +39,7 @@ class Login extends React.Component {
     }else if(this.state.user === "admissiondesk@medlab.com" && this.state.pass === "admission123"){
       alert('Admission Desk LogIn Successful');
       this.setState({
-        log: 3,
+        log: 3, 
       })
 
     }else if(this.state.user === "assessmentdesk@medlab.com" && this.state.pass === "assess123"){

@@ -17,7 +17,7 @@ class HelpDesk extends React.Component {
       PatientSurname: '',
       CovidStatus: '',
       Temperature: '',
-      
+      DateofCertificate:'',      
       
     }
     
@@ -26,6 +26,7 @@ class HelpDesk extends React.Component {
     this.handleChangePatientSurname = this.handleChangePatientSurname.bind(this);
     this.handleChangeCovidStatus = this.handleChangeCovidStatus.bind(this);
     this.handleChangeTemperature = this.handleChangeTemperature.bind(this);
+    this.handleChangeDateofCertificate = this.handleChangeDateofCertificate.bind(this);
     
     
     this.Postdata = this.Postdata.bind(this);
@@ -38,7 +39,7 @@ class HelpDesk extends React.Component {
   var axios = require('axios');
   
 
-  var data = JSON.stringify({"PatientID":this.state.PatientID,"PatientName":this.state.PatientName, "PatientSurname": this.state.PatientSurname, "CovidStatus": this.state.CovidStatus,"Temperature": this.state.Temperature});
+  var data = JSON.stringify({"PatientID":this.state.PatientID,"PatientName":this.state.PatientName, "PatientSurname": this.state.PatientSurname, "CovidStatus": this.state.CovidStatus,"Temperature": this.state.Temperature, "DateofCertificate":this.state.DateofCertificate});
   
   var config = {
     method: 'post',
@@ -122,6 +123,9 @@ handleChangeCovidStatus(event) {
 handleChangeTemperature(event) {
   this.setState({Temperature: event.target.value});
 }
+handleChangeDateofCertificate(event) {
+  this.setState({DateOfCertificate: event.target.value});
+}
   render(){
     return (
         <>
@@ -160,7 +164,7 @@ handleChangeTemperature(event) {
                 <input type="text" placeholder="Covid 19 Status" className="form-control" onChange={this.handleChangeCovidStatus} />
               </div>
               <div className="row form-row">
-                <input type="text" placeholder="Date of issue of certificate" className="form-control" />
+                <input type="text" placeholder="Date of issue of certificate" className="form-control"  onChange={this.handleChangeDateofCertificate}/>
               </div>
               <div className="row form-row">
                 <input id="dat" type="text" placeholder="Temperature" className="form-control" onChange={this.handleChangeTemperature} />

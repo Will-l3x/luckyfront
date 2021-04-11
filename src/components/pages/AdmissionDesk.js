@@ -20,7 +20,7 @@ class AdmissionDesk extends React.Component {
       DOB: '',
       IDnumber: '',
       MaritalStatus: '',
-      EmailAddress: '',
+      EmailAddress: 'admin@medlab.com',
       MedicalAid: '',
       MedicalAidNumber: '',
       ConsultationFee: '',
@@ -54,7 +54,7 @@ class AdmissionDesk extends React.Component {
   var axios = require('axios');
   
 
-  var data = JSON.stringify({"PatientID":this.state.PatientID,"NextofKin":this.state.NextofKin, "Gender": this.state.Gender, "Age": this.state.Age, "DOB": this.state.DOB,"IDNumber": this.state.IDnumber, "MaritalStatus": this.state.MaritalStatus, "MedicalAid": this.state.MedicalAid, "MedicalAidNumber": this.state.MedicalAidNumber,"ConsultationFee": this.state.ConsultationFee, "TestsFee": this.state.TestsFee});
+  var data = JSON.stringify({"PatientID":this.state.PatientID,"NextofKin":this.state.NextofKin, "Gender": this.state.Gender, "Age": this.state.Age, "DOB": this.state.DOB,"IDNumber": this.state.IDnumber, "MaritalStatus": this.state.MaritalStatus,"EmailAddress":this.state.EmailAddress, "MedicalAid": this.state.MedicalAid, "MedicalAidNumber": this.state.MedicalAidNumber,"ConsultationFee": this.state.ConsultationFee, "TestsFee": this.state.TestsFee});
   
   var config = {
     method: 'post',
@@ -69,19 +69,20 @@ class AdmissionDesk extends React.Component {
   .then(function (response) {
     console.log(JSON.stringify(response.data));
     alert(JSON.stringify(response.data.message));
+   
     
   })
   .catch(function (error) {
     console.log(error);
   });
-  
+  this.MineData();
 }
 async MineData(){
   var axios = require('axios');
 
   var config = {
     method: 'get',
-    url: this.state.NewNode+'/mine',
+    url: this.state.NewNode+'/mineadmission',
     headers: { }
   };
   
@@ -219,6 +220,9 @@ handleChangeTestsFee(event) {
                       </div>
                       <div className="col-sm-6">
                         <input type="text" placeholder="Consultation Fee" className="form-control" onChange={this.handleChangeConsultationFee}/>
+                      </div>
+                      <div className="col-sm-6">
+                        <input type="text" placeholder="Tests Fee" className="form-control" onChange={this.handleChangeTestsFee}/>
                       </div>
                     </div>
                     <div className="row form-row">

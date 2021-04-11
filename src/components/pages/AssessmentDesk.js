@@ -55,7 +55,7 @@ class AssessmentDesk extends React.Component {
   var axios = require('axios');
   
 
-  var data = JSON.stringify({"PatientID":this.state.PatientID,"Notes":this.state.Notes, "Allergies": this.state.Allergies, "Symptoms": this.state.Symptoms, "BP": this.state.BP,"Pulse": this.state.Pulse, "Temperature": this.state.Temperature, "weight": this.state.weight, "oxygen": this.state.oxygen,"PriorityLevel": this.state.PriorityLevel, "Height": this.state.Height});
+  var data = JSON.stringify({"PatientID":this.state.PatientID,"Notes":this.state.Notes, "Allergies": this.state.Allergies, "Symptoms": this.state.Symptoms, "BP": this.state.BP,"Pulse": this.state.Pulse, "Temperature": this.state.Temperature, "Respirations":this.state.Respirations, "Weight": this.state.weight, "Oxygen": this.state.oxygen,"PriorityLevel": this.state.PriorityLevel, "Height": this.state.Height});
   
   var config = {
     method: 'post',
@@ -75,14 +75,14 @@ class AssessmentDesk extends React.Component {
   .catch(function (error) {
     console.log(error);
   });
-  
+  this.MineData();
 }
 async MineData(){
   var axios = require('axios');
 
   var config = {
     method: 'get',
-    url: this.state.NewNode+'/mine',
+    url: this.state.NewNode+'/mineassessment',
     headers: { }
   };
   
@@ -211,7 +211,7 @@ handleChangeHeight(event) {
                         <input type="text" placeholder="Temperature" className="form-control" onChange={this.handleChangeTemperature} />
                       </div>
                       <div className="col-sm-6">
-                        <input type="text" placeholder="Respirations" className="form-control" onChange={this.handleChangeTemperature} />
+                        <input type="text" placeholder="Respirations" className="form-control" onChange={this.handleChangeRespirations} />
                       </div>
                     </div>
                     <div className="row form-row">
