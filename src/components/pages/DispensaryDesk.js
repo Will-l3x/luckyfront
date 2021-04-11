@@ -65,6 +65,8 @@ class DispensaryDesk extends React.Component{
     this.RegisterNode = this.RegisterNode.bind(this);
     this.getChain = this.getChain.bind(this);
     this.getprescriptions = this.getprescriptions.bind(this);
+    this.renderTableData = this.renderTableData.bind(this);
+    this.renderTablesData = this.renderTableData.bind(this);
 }
 
 componentDidMount(){
@@ -196,6 +198,40 @@ getprescriptions(){
   )
 }
 
+
+
+renderTableData(){
+  return this.state.dataSource.map((trans)=>{
+    trans.transactions.map((glue)=>{
+      
+      return (
+        <tr key={glue.PatientID}>
+          <td>{glue.PatientID}</td>
+          <td>{glue.Prescription}</td>
+          <td>{glue.recommendation}</td>
+        </tr>
+      )
+    })
+  })
+}
+
+renderTablesData(){
+  return this.state.dataSource.map((elo)=>{
+    elo.transactions.map((give)=>{
+      <tr key={give.PatientID}>
+        <td>{give.PatientID}</td>
+        <td>{give.Prescription}</td>
+      </tr>
+    })
+  })
+  
+                
+
+
+}
+
+
+
   render(){
    
 
@@ -226,23 +262,12 @@ getprescriptions(){
               <div>
                
               </div>
+               
               
-              <div>
-                <table >
-                  <thead>
-                      <tr>
-
-                      </tr>
-                  </thead>
-                  <tbody>
-
-                      <td></td>
-                  </tbody>
-                </table>
-              </div>
               <div className="col-sm-5">
                 <div className="form-data">
                   <div className="form-head">
+                    
                     <h2>Pharmacy Tab</h2>
                   </div>
                   <div className="form-body">
@@ -252,6 +277,8 @@ getprescriptions(){
                     <div className="row form-row">
                       <input type="text" placeholder="Prescription" className="form-control" onChange={this.handleChangeDrugName} />
                     </div>
+                    <div>
+                    
                     
                     
                     
@@ -262,6 +289,23 @@ getprescriptions(){
                       </button>
                       
                     </div>
+                    <h1>Prescriptions Table</h1>
+                    <table>
+                      <thead>
+                        <tr>
+                          <th>Patient ID</th>
+                          <th>Prescription</th>
+                          <th>Recommendation</th>
+                        </tr>
+                        </thead>
+                      
+
+                    </table>
+                      
+                    
+                      
+                   
+                  </div>
                   </div>
                 </div>
               </div>

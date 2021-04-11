@@ -237,7 +237,7 @@ getChain(){
               
               <div className="row form-row">
                 <button className="btn btn-success btn-appointment" onClick={this.Postdata}>
-                  Book Appointment
+                  Save and Send To Pharmacy
                 </button>
               </div>
             </div>
