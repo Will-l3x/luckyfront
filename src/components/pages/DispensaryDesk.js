@@ -1,7 +1,29 @@
-import React from 'react';
+import React, {useMemo} from 'react';
+import {useTable} from 'react-table'
 import 'bootstrap/dist/css/bootstrap.min.css';
 //import 'bootstrap/dist/css/datepicker.css';
 import './style.css';
+
+
+
+
+export function DispensaryDeskTable() {
+  const columns = useMemo(()=> this.state.COLLUMNS, [])
+  const data = useMemo(()=>this.state.dataSource)
+
+  const tableInstance = useTable({
+    columns,
+    data,
+  })
+
+  const {getTableProps, getTableBodyProps, headerGroups, rows, prepareRow} = tableInstance
+  return (
+    <div>
+      
+    </div>
+  )
+}
+
 
 
 class DispensaryDesk extends React.Component{
@@ -18,8 +40,20 @@ class DispensaryDesk extends React.Component{
       Quantity: '',
       dataSource: [],
       url: 'http://localhost:8000/',
-      Details: ''
-      
+      Details: '',
+      COLLUMNS: [{
+          Header: 'Patient ID',
+          accessor: 'PatientID'
+      },
+      {
+          Header: 'Prescription',
+          accessor: 'Prescription'
+
+      },{
+        Header: 'Recommendation',
+        accessor: 'recommendation'
+      }
+      ]
     }
     
     this.handleChangeDrugName = this.handleChangeDrugName.bind(this);
@@ -36,6 +70,8 @@ class DispensaryDesk extends React.Component{
 componentDidMount(){
   this.getChain();
 }
+
+
 
  async Postdata (){
   var axios = require('axios');
@@ -161,6 +197,10 @@ getprescriptions(){
 }
 
   render(){
+   
+
+ 
+    
     return (
         <>
         {/* Required meta tags */}
@@ -188,20 +228,17 @@ getprescriptions(){
               </div>
               
               <div>
-              {this.state.dataSource.map((el)=>{
-                        return <div>
-                            
-                             
-                            {el.transactions.map((tel)=>{
-                                return <div>
-                                    <h4>{tel.PatientID}</h4>
-                                    <h4>{tel.Prescription}</h4>
-                                    
-                                </div>
-                            })}
-                        </div>
-                    })
-                    }
+                <table >
+                  <thead>
+                      <tr>
+
+                      </tr>
+                  </thead>
+                  <tbody>
+
+                      <td></td>
+                  </tbody>
+                </table>
               </div>
               <div className="col-sm-5">
                 <div className="form-data">
