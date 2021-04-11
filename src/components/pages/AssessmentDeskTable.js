@@ -11,10 +11,12 @@ class AssessmentTable extends Component {
         //state is by default an object
         log: 0,
          students: [
-            { PatientID: 1, PatientName: 'Luckson', PatientSurname: 'Dombo', CovidStatus: 'false', Temperature: 36.5, DateofCertificate: '27 MArch 2021' },
-            { PatientID: 2, PatientName: 'Wilvanos', PatientSurname: 'Zhira', CovidStatus: 'false', Temperature: 36.7, DateofCertificate: '7 April 2021'},
-            { PatientID: 3, PatientName: 'tadiwanashe', PatientSurname: 'Chigwedere', CovidStatus: 'false', Temperature: 36.3, DateofCertificate: '02 April 2021' },
-            { PatientID: 4, PatientName: 'Ruvarashe', PatientSurname: 'Moyo', CovidStatus: 'true', Temperature: 37.2, DateofCertificate: '10 April 2021'}
+            { PatientID: 1, Age: 24, MedicalAid: 'PSMAS', MedicalAidNumber: 123456 },
+            { PatientID: 2, Age: 26, MedicalAid: 'CIMAS', MedicalAidNumber: 123456 },
+            { PatientID: 3, Age: 14, MedicalAid: 'FIRST MUTUAL', MedicalAidNumber: 123456 },
+            { PatientID: 4, Age: 19, MedicalAid: 'ECO SURE', MedicalAidNumber: 123456 },
+            
+            
             
          ]
       }
@@ -28,19 +30,18 @@ class AssessmentTable extends Component {
 
    renderTableData() {
     return this.state.students.map((student, index) => {
-       const { PatientID, PatientName, PatientSurname, CovidStatus, Temperature, DateofCertificate } = student //destructuring
+       const { PatientID, Age, MedicalAid, MedicalAidNumber } = student //destructuring
        return (
           <tr key={PatientID}>
              <td>{PatientID}</td>
-             <td>{PatientName}</td>
-             <td>{PatientSurname}</td>
-             <td>{CovidStatus}</td>
-             <td>{Temperature}</td>
-             <td>{DateofCertificate}</td>
+             <td>{Age}</td>
+             <td>{MedicalAid}</td>
+             <td>{MedicalAidNumber}</td>
+             
              <td>
                     <div className="row form-row">
                       <button className="btn btn-success btn-appointment" onClick={this.movePage}>
-                        Proceed To Admit Patient
+                        Proceed To Assess Patient
                       </button>
                       
                     </div>
