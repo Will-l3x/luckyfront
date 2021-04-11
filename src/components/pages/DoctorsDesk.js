@@ -52,7 +52,7 @@ class DoctorsDesk extends React.Component {
   var axios = require('axios');
   
 
-  var data = JSON.stringify({"PatientID":this.state.PatientID,"Notes":this.state.Notes, "Allergies": this.state.Allergies, "Symptoms": this.state.Symptoms, "BP": this.state.BP,"Pulse": this.state.Pulse, "Temperature": this.state.Temperature, "Diagnosis": this.state.Diagnosis, "Prescription": this.state.Prescription,"PriorityLevel": this.state.PriorityLevel, "LabNotes": this.state.LabNotes});
+  var data = JSON.stringify({"PatientID":this.state.PatientID, "Allergies": this.state.Allergies, "Symptoms": this.state.Symptoms, "BP": this.state.BP,"Pulse": this.state.Pulse, "Temperature": this.state.Temperature, "Diagnosis": this.state.Diagnosis, "Prescription": this.state.Diagnosis, "LabNotes": this.state.LabNotes, "recommendation": this.state.recommendation});
   
   var config = {
     method: 'post',
@@ -66,20 +66,20 @@ class DoctorsDesk extends React.Component {
   axios(config)
   .then(function (response) {
     console.log(JSON.stringify(response.data));
-    alert(JSON.stringify(response.data.messSymptoms));
+    alert(JSON.stringify(response.data.message));
     
   })
   .catch(function (error) {
     console.log(error);
   });
-  
+  this.MineData();
 }
 async MineData(){
   var axios = require('axios');
 
   var config = {
     method: 'get',
-    url: this.state.NewNode+'/mine',
+    url: this.state.NewNode+'/mineDoctor',
     headers: { }
   };
   
