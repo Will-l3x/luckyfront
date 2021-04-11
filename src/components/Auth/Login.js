@@ -76,7 +76,7 @@ class Login extends React.Component {
     }else if(this.state.log === 2){
       return <Redirect to =  "/admin" />
     }else if(this.state.log === 3){
-      return <Redirect to = "/admindesk" />
+      return <Redirect to = "/admissiontable" />
     }else if(this.state.log === 4){
       return <Redirect to = "/assessmentdesk" />
     }else if(this.state.log === 5){
