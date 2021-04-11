@@ -104,6 +104,30 @@ async RegisterNode (){
     });
 
 }
+getChain(){
+        
+  fetch(this.state.node+'/chain')
+  .then(res => res.json())
+  .then(
+    (result) => {
+      this.setState({
+        isLoaded: true,
+        dataSource: result.chain,
+       
+      });
+    },
+    // Note: it's important to handle errors here
+    // instead of a catch() block so that we don't swallow
+    // exceptions from actual bugs in components.
+    (error) => {
+      this.setState({
+        isLoaded: true,
+        error
+      });
+    }
+  )
+
+}
 
 handleChangeDrugName(event) {
   this.setState({DrugName: event.target.value});
@@ -125,10 +149,39 @@ handleChangeDetails(event) {
           <div className="container">
             <div className="row no-margin">
               <div className="col-sm-7">
+                
                 <div className="content">
+                <button className="btn btn-success btn-appointment" onClick={this.Postdata}>
+                        Register Node
+                      </button>
                   <h1>Patient Medicine & Prescription</h1>
                   <p>doctors pescription appear here. </p>
                   <h2>For help email : admin@medblock.co.zw </h2>
+                </div>
+              </div>
+              <div className="col-sm-5">
+                <div className="form-data">
+                  <div className="form-head">
+                    <h2>Pharmacy Tab</h2>
+                  </div>
+                  <div className="form-body">
+                    <div className="row form-row">
+                      <input type="text" placeholder="Enter Patient ID" className="form-control" onChange={this.handleChangeDetails} />
+                    </div>
+                    <div className="row form-row">
+                      <input type="text" placeholder="Prescription" className="form-control" onChange={this.handleChangeDrugName} />
+                    </div>
+                    
+                    
+                    
+                    
+                    <div className="row form-row">
+                      <button className="btn btn-success btn-appointment" onClick={this.Postdata}>
+                        Get Pescription Chain
+                      </button>
+                      
+                    </div>
+                  </div>
                 </div>
               </div>
               <div className="col-sm-5">
