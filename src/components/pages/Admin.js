@@ -215,7 +215,7 @@ ResolveChain(){
     </div>
     <div className="col-md-4 market-update-gd">
       <div className="market-update-block clr-block-3">
-        <div className="col-md-8 market-update-left" onClick={this.MineData}>
+        <div className="col-md-8 market-update-left" onClick={this.ResolveChain}>
           <h3>Resolve Blockchain</h3>
           <h4>Longest Chain is Valid</h4>
           <p>lets resolve our blockchain should conflicts arise</p>
