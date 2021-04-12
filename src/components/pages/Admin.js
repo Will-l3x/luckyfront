@@ -150,9 +150,9 @@ handleChangeDetails(event) {
     <div className="col-md-4 market-update-gd">
       <div className="market-update-block clr-block-1">
         <div className="col-md-8 market-update-left">
-          <h3>Mine Doctors Desk</h3>
-          <h4>Doctor Transactions</h4>
-          <p>Approval Required : pending doctor transaction</p>
+          <h3>Search Records</h3>
+          <h4>ALl Records</h4>
+          <p>Run Blockchain Search Query</p>
         </div>
         <div className="col-md-4 market-update-right">
           <i className="fa fa-user-md" />
@@ -163,9 +163,9 @@ handleChangeDetails(event) {
     <div className="col-md-4 market-update-gd">
       <div className="market-update-block clr-block-2">
         <div className="col-md-8 market-update-left" onClick={this.getChain}>
-          <h3>Mine Admission Desk</h3>
-          <h4>Total Admissions</h4>
-          <p>Wants to Admit : pending patient count</p>
+          <h3>Get Full Chain Desk</h3>
+          <h4>FUll chain reading</h4>
+          <p>lets us view the entireity of the blockchain without abstraction</p>
         </div>
         <div className="col-md-4 market-update-right">
           <i className="fa fa-user-o" />
@@ -176,9 +176,9 @@ handleChangeDetails(event) {
     <div className="col-md-4 market-update-gd">
       <div className="market-update-block clr-block-3">
         <div className="col-md-8 market-update-left" onClick={this.MineData}>
-          <h3>Mine Dispensary COunt</h3>
-          <h4>Total Dispensary</h4>
-          <p>Approve Appointments :pendingappointmentcount</p>
+          <h3>Resolve Blockchain</h3>
+          <h4>Longest Chain is Valid</h4>
+          <p>lets resolve our blockchain should conflicts arise</p>
           
         </div>
         <div className="col-md-4 market-update-right">
