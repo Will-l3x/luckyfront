@@ -18,6 +18,7 @@ import AdmissionTable from './components/pages/AdmissionDeskTable';
 import AssessmentTable from './components/pages/AssessmentDeskTable';
 import DoctorTable from './components/pages/DoctorsDeskTable';
 import PharmacyTable from './components/pages/PharmacyTable';
+import SearchBar from './components/SearchBar';
 
 
 function App() {
@@ -41,6 +42,7 @@ function App() {
           <Route exact path = '/assessmenttable' component={AssessmentTable} />
           <Route exact path = '/doctortable' component={DoctorTable} />
           <Route exact path = '/pharmacytable' component={PharmacyTable} />
+          <Route exact path = '/search' component={SearchBar} />
       </Switch>
     </Router>
   </>

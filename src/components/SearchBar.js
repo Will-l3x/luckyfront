@@ -2,10 +2,11 @@ import React from 'react'
 import {useState } from 'react'
 import JSONDATA from './MOCK_DATA.json'
 import './Search.css'
+import './Auth/Style.css'
 function SearchBar() {
     const [searchTerm, setSearchterm] = useState('')
     return (
-        <div>
+        <div className = "SearchBar">
             <input type = "text" placeholder = "Search....." onChange={event =>{setSearchterm(event.target.value)}}/>
             {JSONDATA.filter((val)=>{
                 if (searchTerm == ""){
@@ -14,9 +15,11 @@ function SearchBar() {
                     return val
                 }
             }).map((val, key)=>{
-                return <div className="user" key={key}>
-                    <p>{val.first_name}</p>
-                    </div>
+                return  <div className="user" key={key}>
+                <p>{val.first_name}</p>
+                </div>
+
+                
             })}
         </div>
     )

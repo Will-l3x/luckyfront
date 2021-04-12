@@ -2,6 +2,7 @@ import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 //import 'bootstrap/dist/css/datepicker.css';
 import './admin.css';
+import {Redirect} from 'react-router'
 
 
 class Admin extends React.Component {
@@ -18,7 +19,8 @@ class Admin extends React.Component {
       Quantity: '',
       dataSource: [{}],
       url: 'http://localhost:8000/',
-      Details: ''
+      Details: '',
+      log: 0
       
     }
     
@@ -30,6 +32,8 @@ class Admin extends React.Component {
     this.MineData = this.MineData.bind(this);
     this.RegisterNode = this.RegisterNode.bind(this);
     this.getChain = this.getChain.bind(this);
+    this.movePage = this.movePage.bind(this);
+    this.ResolveChain = this.ResolveChain.bind(this);
 }
 
 
@@ -114,6 +118,7 @@ getChain(){
       this.setState({
         isLoaded: true,
         dataSource: result.chain,
+        log: 2
         
       });
       alert('chain successfully captured')
@@ -131,6 +136,11 @@ getChain(){
   )
 
 }
+movePage(){
+  this.setState({
+      log: 1,
+    })
+}
 
 handleChangeDrugName(event) {
   this.setState({DrugName: event.target.value});
@@ -138,7 +148,37 @@ handleChangeDrugName(event) {
 handleChangeDetails(event) {
   this.setState({Details: event.target.value});
 }
+ResolveChain(){
+  fetch('http://localhost:8000/nodes/resolve')
+  .then(res => res.json())
+  .then(
+    (result) => {
+      this.setState({
+        isLoaded: true,
+        dataSource: result.chain,
+        log: 3
+       
+      });
+      alert(result.message)
+    },
+    // Note: it's important to handle errors here
+    // instead of a catch() block so that we don't swallow
+    // exceptions from actual bugs in components.
+    (error) => {
+      this.setState({
+        isLoaded: true,
+        error
+      });
+    }
+  )
+
+}
   render(){
+    if(this.state.log === 1){
+      return <Redirect to = "/search" />
+  }else if(this.state.log === 2){
+    return <Redirect to = "tablechain" />
+  }  
     return (
         <>
   <meta charSet="utf-8" />
@@ -149,7 +189,7 @@ handleChangeDetails(event) {
   <div className="market-updates">
     <div className="col-md-4 market-update-gd">
       <div className="market-update-block clr-block-1">
-        <div className="col-md-8 market-update-left">
+        <div className="col-md-8 market-update-left" onClick={this.movePage}>
           <h3>Search Records</h3>
           <h4>ALl Records</h4>
           <p>Run Blockchain Search Query</p>
