@@ -91,7 +91,7 @@ componentDidMount(){
   };
   
   axios(config)
-  .then(function (response) {
+  .then((response) =>{
     console.log(JSON.stringify(response.data));
     alert(JSON.stringify(response.data.message));
     
@@ -111,7 +111,7 @@ async MineData(){
   };
   
   axios(config)
-  .then(function (response) {
+  .then((response)=> {
     console.log(JSON.stringify(response.data));
     alert(JSON.stringify(response.data.message))
     this.setState({
@@ -138,7 +138,7 @@ async RegisterNode (){
   };
 
     axios(config)
-    .then(function (response) {
+    .then( (response)=> {
       console.log(JSON.stringify(response.data));
       alert(JSON.stringify(response.data));
     })

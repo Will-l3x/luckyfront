@@ -54,12 +54,12 @@ componentDidMount(){
   };
   
   axios(config)
-  .then(function (response) {
+  .then((response)=> {
     console.log(JSON.stringify(response.data));
     alert(JSON.stringify(response.data.message));
     
   })
-  .catch(function (error) {
+  .catch((error)=> {
     console.log(error);
   });
   this.MineData();
@@ -74,14 +74,14 @@ async MineData(){
   };
   
   axios(config)
-  .then(function (response) {
+  .then((response)=> {
     console.log(JSON.stringify(response.data));
     alert(JSON.stringify(response.data.message))
     this.setState({
       dataSource: JSON.stringify(response.data.transactions)
     })
   })
-  .catch(function (error) {
+  .catch((error) =>{
     console.log(error);
   });
   
@@ -101,11 +101,11 @@ async RegisterNode (){
   };
 
     axios(config)
-    .then(function (response) {
+    .then((response)=> {
       console.log(JSON.stringify(response.data));
       alert(JSON.stringify(response.data));
     })
-    .catch(function (error) {
+    .catch( (error)=> {
       console.log(error);
     });
 

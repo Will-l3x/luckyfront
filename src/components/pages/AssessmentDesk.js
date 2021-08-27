@@ -2,7 +2,7 @@ import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 //import 'bootstrap/dist/css/datepicker.css';
 import './style.css';
-import { ThemeConsumer } from 'react-bootstrap/esm/ThemeProvider';
+
 
 
 class AssessmentDesk extends React.Component {
@@ -70,7 +70,7 @@ class AssessmentDesk extends React.Component {
   };
   
   axios(config)
-  .then(function (response) {
+  .then((response) =>{
     console.log(JSON.stringify(response.data));
     alert(JSON.stringify(response.data.message));
     
@@ -90,14 +90,14 @@ async MineData(){
   };
   
   axios(config)
-  .then(function (response) {
+  .then((response)=> {
     console.log(JSON.stringify(response.data));
     alert(JSON.stringify(response.data.message))
     this.setState({
       dataSource: JSON.stringify(response.data.transactions)
     })
   })
-  .catch(function (error) {
+  .catch( (error)=> {
     console.log(error);
   });
   
@@ -117,7 +117,7 @@ async RegisterNode (){
   };
 
     axios(config)
-    .then(function (response) {
+    .then((response)=> {
       console.log(JSON.stringify(response.data));
       alert(JSON.stringify(response.data));
     })
